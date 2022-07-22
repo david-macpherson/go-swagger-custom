@@ -1,0 +1,41 @@
+swagger: "2.0"
+basePath: "/"
+schemes:
+- "http"
+info:
+  description: "go-swagger custom extension scratch pad"
+  version: "0.0.0"
+  title: "go-swagger custom extension scratch pad"
+  termsOfService: ""
+  contact:
+    name: "David Macpherson"
+    email: "david@tensorworks.com.au"
+paths:
+  /{firstName}_{lastName}:
+    post:
+      summary: "A Place where a user can upload a big file"
+      description: "A Place where a user can upload a big file"
+      operationId: "UploadBigFile"
+      consumes:
+        - multipart/form-data
+      produces:
+        - application/json
+      parameters:
+        - name: firstName
+          in: path
+          description: "First Name"
+          required: true
+          type: string
+        - name: lastName
+          in: path
+          description: "Last Name"
+          required: true
+          type: string
+        - name: bigFile
+          in: formData
+          required: true
+          type: file         
+      responses:
+        200:
+          description: "Successful"
+
